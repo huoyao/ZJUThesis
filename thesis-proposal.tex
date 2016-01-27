@@ -1,0 +1,151 @@
+\documentclass[oneside]{ZJUthesis}
+% 该文档中首字符为“%”的均为注释行，不会在论文中出现
+
+% 论文默认为单面模式，需单面模式请将第一行换为如下所示：
+%\documentclass[twoside]{ZJUthesis}
+
+% 取消目录中链接的颜色，方便打印
+% 如需颜色，请将“false”改为“true”
+\hypersetup{colorlinks=false}
+
+% 这里几行代码使得目录中的“第几章” 和后面的章节名称不致发生重叠
+\makeatletter
+\renewcommand{\numberline}[1]{%
+	\settowidth\@tempdimb{#1\hspace{0.5em}}%
+	\ifdim\@tempdima<\@tempdimb%
+	\@tempdima=\@tempdimb%
+	\fi%
+	\hb@xt@\@tempdima{\@cftbsnum #1\@cftasnum\hfil}\@cftasnumb}
+\makeatother
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\usepackage{diagbox}
+\begin{document}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%% 正文字体设定
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\songti
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%% 论文封面部分
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% 中文封面内容
+	
+	% 中图分类号
+	\classification{TP391}
+	
+	% 单位代码
+	\serialnumber{10335}
+	
+	% 密级，如需密级则将其前“%”去掉
+	%\SecretLevel{}
+	
+	% 学号
+	\PersonalID{12345677}
+	
+	\title[]{FFF}
+	% 如果标题一行写不下，就写成两行，在下面的命令里写第二行，不需要两行则注释掉
+	\titletl{F现}
+	
+	%英文题目
+	\Etitle{IFF of}
+	% 如果一行写不下，同中文题目设定，一行写不下则写两行，不需要就注释掉
+	\Etitletl{GFFFFtem}
+	%\Etitletll{An Oriental View}s
+	
+	% 作者
+	\author{F\ \ F}
+	\Eauthor{FFe FFg}
+	
+	\degree{硕士}
+	\Edegree{Master of Engineering}
+	
+	% 导师
+	\supervisor{FF\ \ G\ \ 教授} \Esupervisor{Prof. M FFg}
+	
+	% 合作导师，如果有的话，去掉注释，
+	\cpsupervisor{FTGH\ \ 教授}
+	\Ecpsupervisor{Prof. RTYR LOIng}
+	
+	% 专业名称
+	\major{计算机应用技术} \Emajor{Computer Application Technology}
+	
+	% 研究方向
+	\researchdm{计算机图形学} \Eresearchdm{Computer Graphics}
+	
+	% 所属学院
+	\institute{计算机科学与技术学院} \Einstitute{College of Computer Science and Techonology}
+	
+	% 答辨日期
+	%\defenddate{2011年11月1日}
+	
+	% 生成封面
+	%\makeCoverPage
+	
+	% 生成英文封面
+	%\makeECoverPage
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%% 原创声明与版权协议页
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	% 生成原创声明与版权协议页
+	%\makeOSandCPRTpage
+	
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%% 论文部分开始
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\ZJUfrontmatter
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%% 摘要
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%\input{./chapters/abstractC}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%% 英文摘要
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%\input{./chapters/abstractE}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%% 目录页
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\ZJUcontents
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%% 插图列表
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%\ZJUListofFigures
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%% 表格列表
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%\ZJUListofTables
+	
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%% 正文内容部分开始
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\ZJUmainmatter
+	
+	\input{./proposal-chapters/chap-proposal}
+	
+	\ZJUbackmatter
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%% 参考文献
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\ZJUthesisbib{thesisbib-proposal}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%% 发表论文目录
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%\input{./chapters/publications}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%% 致谢页
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%\input{./chapters/thanks}
+	
+	
+\end{document}
